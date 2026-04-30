@@ -2,31 +2,47 @@
   "name": "@capybearista/opencode-output-styles",
   "version": "0.1.0",
   "description": "Output styles plugin for OpenCode",
-  "type": "module",
+  "author": "capyBearista <capybearista@gmail.com>",
   "license": "MPL-2.0",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": "./dist/index.js"
-  },
-  "engines": {
-    "opencode": "^1.0.0"
-  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check": "bunx @biomejs/biome check --write .",
+    "lint": "bunx @biomejs/biome check .",
+    "ci": "bunx @biomejs/biome ci .",
+    "test": "bun test"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
   },
   "peerDependencies": {
-    "@opencode-ai/plugin": ">=1.14.24"
+    "@opencode-ai/plugin": ">=1.14.0"
   },
   "dependencies": {
     "yaml": "^2.4.5"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.4.13",
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-conventional": "^19.0.0",
     "@opencode-ai/plugin": "1.14.24",
     "@tsconfig/node22": "^22.0.0",
-    "@types/node": "^22.0.0",
-    "typescript": "^5.5.0"
+    "@types/bun": "latest",
+    "git-cliff": "^2.0.0",
+    "husky": "^9.0.0",
+    "typescript": "^5.8.0"
+  },
+  "engines": {
+    "opencode": "^1.0.0"
   },
   "keywords": [
     "opencode",

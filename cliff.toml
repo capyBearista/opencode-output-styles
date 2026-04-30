@@ -1,0 +1,54 @@
+[changelog]
+body = """
+{% if version %}\
+    {% if previous.version %}\
+        ## [{{ version }}](https://github.com/capybearista/opencode-output-styles/compare/{{ previous.version }}...{{ version }}) - {{ timestamp | date(format="%Y-%m-%d") }}
+    {% else %}\
+        ## [{{ version }}] - {{ timestamp | date(format="%Y-%m-%d") }}
+    {% endif %}\
+{% else %}\
+    ## Unreleased
+{% endif %}\
+
+{% for group, commits in commits | group_by(attribute="group") %}
+    ### {{ group | upper_first }}
+    {% for commit in commits %}
+        - {{ commit.message | upper_first }}\
+        {% if commit.github.pr_number %} ([#{{ commit.github.pr_number }}]({{ commit.github.pr_url }})){% endif %}\
+    {% endfor %}
+{% endfor %}\
+
+{% if github.contributors | filter(attribute="is_first_time", value=true) | length != 0 %}
+    ### New Contributors
+    {% for contributor in github.contributors | filter(attribute="is_first_time", value=true) %}
+        - @{{ contributor.username }} made their first contribution in [#{{ contributor.pr_number }}]({{ contributor.pr_url }})
+    {%- endfor -%}
+{% endif %}\
+
+{% if version %}\
+    {% if previous.version %}\
+        **Full Changelog**: https://github.com/capybearista/opencode-output-styles/compare/{{ previous.version }}...{{ version }}
+    {% endif %}\
+{% endif %}\
+"""
+trim = true
+
+[git]
+conventional_commits = true
+filter_unconventional = true
+commit_parsers = [
+  { message = "^feat", group = "Features" },
+  { message = "^fix", group = "Bug Fixes" },
+  { message = "^docs", group = "Documentation" },
+  { message = "^perf", group = "Performance" },
+  { message = "^refactor", group = "Refactor" },
+  { message = "^style", group = "Styling" },
+  { message = "^test", group = "Testing" },
+  { message = "^chore\\(release\\)", skip = true },
+  { message = "^chore\\(deps\\)", group = "Dependencies" },
+  { message = "^chore", group = "Miscellaneous" },
+]
+
+[remote.github]
+owner = "capybearista"
+repo = "opencode-output-styles"

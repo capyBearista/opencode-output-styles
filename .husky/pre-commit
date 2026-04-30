@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+bunx @biomejs/biome check --staged --write --no-errors-on-unmatched . && bun run typecheck

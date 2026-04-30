@@ -1,0 +1,14 @@
+src/
+tests/
+tsconfig.json
+biome.json
+commitlint.config.ts
+cliff.toml
+.editorconfig
+.gitattributes
+.gitignore
+.npmignore
+.husky/
+.github/
+CONTRIBUTING.md
+AGENTS.md
