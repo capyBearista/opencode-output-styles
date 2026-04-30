@@ -1,0 +1,41 @@
+{
+  "name": "@capybearista/opencode-output-styles",
+  "version": "0.1.0",
+  "description": "Output styles plugin for OpenCode",
+  "type": "module",
+  "license": "MPL-2.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "engines": {
+    "opencode": "^1.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@opencode-ai/plugin": ">=1.14.24"
+  },
+  "dependencies": {
+    "yaml": "^2.4.5"
+  },
+  "devDependencies": {
+    "@opencode-ai/plugin": "1.14.24",
+    "@tsconfig/node22": "^22.0.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "opencode-styles",
+    "output-styles"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/capybearista/opencode-output-styles"
+  }
+}
