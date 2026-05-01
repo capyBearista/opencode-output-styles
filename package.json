@@ -52,6 +52,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/capybearista/opencode-output-styles"
+    "url": "git+https://github.com/capybearista/opencode-output-styles.git"
   }
 }

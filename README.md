@@ -39,4 +39,4 @@ bun run build      # Compile
 
 ## License
 
-[MPL-2.0](LICENSE)
+[MPL-2.0](LICENSE.md)
