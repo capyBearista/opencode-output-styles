@@ -1,15 +1,13 @@
 {
   "name": "@capybearista/opencode-output-styles",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Output styles plugin for OpenCode",
   "author": "capyBearista <capybearista@gmail.com>",
   "license": "MPL-2.0",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit",
@@ -34,7 +32,7 @@
     "@biomejs/biome": "2.4.13",
     "@commitlint/cli": "^19.0.0",
     "@commitlint/config-conventional": "^19.0.0",
-    "@opencode-ai/plugin": "1.14.24",
+    "@opencode-ai/plugin": ">=1.14.0",
     "@tsconfig/node22": "^22.0.0",
     "@types/bun": "latest",
     "git-cliff": "^2.0.0",

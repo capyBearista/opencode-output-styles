@@ -1,15 +1,9 @@
 # @capybearista/opencode-output-styles
 
-An OpenCode plugin that mimics Claude Code's output styles feature, allowing you to load markdown files with YAML frontmatter to dynamically change the system prompt and agent behavior.
+Output styles plugin for OpenCode
 
 [![NPM Version](https://img.shields.io/npm/v/@capybearista/opencode-output-styles)](https://www.npmjs.com/package/@capybearista/opencode-output-styles)
 [![License: MPL-2.0](https://img.shields.io/badge/License-MPL--2.0-blue.svg)](https://opensource.org/licenses/MPL-2.0)
-
-## Install
-
-```bash
-opencode plugin install @capybearista/opencode-output-styles
-```
 
 ## Usage
 
@@ -26,6 +20,12 @@ opencode plugin install @capybearista/opencode-output-styles
 2. In OpenCode, run `/style <filename>` (e.g. `/style pirate`) to activate the style.
 3. OpenCode will now inject this style into the system prompt and (if `keep-coding-instructions: false`) mute default coding instructions.
 4. Use `/style` to list available styles or `/style clear` to remove the active style.
+
+## Install
+
+```bash
+opencode plugin install @capybearista/opencode-output-styles
+```
 
 ## Development
 
